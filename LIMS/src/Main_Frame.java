@@ -56,6 +56,17 @@ public class Main_Frame extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         reports_panel = new javax.swing.JPanel();
         system_setup_panel = new javax.swing.JPanel();
+        Add_New_Employee_btn = new javax.swing.JButton();
+        Update_Employee_Btn = new javax.swing.JButton();
+        Delete_Employee_Btn = new javax.swing.JButton();
+        Search_Employee_Btn = new javax.swing.JButton();
+        system_setup_internal_panel = new javax.swing.JPanel();
+        add_new_employee_panel = new javax.swing.JPanel();
+        update_employee_panel = new javax.swing.JPanel();
+        delete_employee_panel = new javax.swing.JPanel();
+        search_employee_panel = new javax.swing.JPanel();
+        jPanel12 = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -266,15 +277,147 @@ public class Main_Frame extends javax.swing.JFrame {
 
         functions_panel.add(reports_panel, "card2");
 
+        system_setup_panel.setBackground(new java.awt.Color(255, 255, 255));
+
+        Add_New_Employee_btn.setText("Add New Employe");
+        Add_New_Employee_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Add_New_Employee_btnActionPerformed(evt);
+            }
+        });
+
+        Update_Employee_Btn.setText("Update Employee");
+        Update_Employee_Btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Update_Employee_BtnActionPerformed(evt);
+            }
+        });
+
+        Delete_Employee_Btn.setText("Delete Employee");
+        Delete_Employee_Btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Delete_Employee_BtnActionPerformed(evt);
+            }
+        });
+
+        Search_Employee_Btn.setText("Search Employee");
+        Search_Employee_Btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Search_Employee_BtnActionPerformed(evt);
+            }
+        });
+
+        system_setup_internal_panel.setLayout(new java.awt.CardLayout());
+
+        javax.swing.GroupLayout add_new_employee_panelLayout = new javax.swing.GroupLayout(add_new_employee_panel);
+        add_new_employee_panel.setLayout(add_new_employee_panelLayout);
+        add_new_employee_panelLayout.setHorizontalGroup(
+            add_new_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 818, Short.MAX_VALUE)
+        );
+        add_new_employee_panelLayout.setVerticalGroup(
+            add_new_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+
+        system_setup_internal_panel.add(add_new_employee_panel, "card2");
+
+        javax.swing.GroupLayout update_employee_panelLayout = new javax.swing.GroupLayout(update_employee_panel);
+        update_employee_panel.setLayout(update_employee_panelLayout);
+        update_employee_panelLayout.setHorizontalGroup(
+            update_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 818, Short.MAX_VALUE)
+        );
+        update_employee_panelLayout.setVerticalGroup(
+            update_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+
+        system_setup_internal_panel.add(update_employee_panel, "card2");
+
+        javax.swing.GroupLayout delete_employee_panelLayout = new javax.swing.GroupLayout(delete_employee_panel);
+        delete_employee_panel.setLayout(delete_employee_panelLayout);
+        delete_employee_panelLayout.setHorizontalGroup(
+            delete_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 818, Short.MAX_VALUE)
+        );
+        delete_employee_panelLayout.setVerticalGroup(
+            delete_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+
+        system_setup_internal_panel.add(delete_employee_panel, "card2");
+
+        javax.swing.GroupLayout search_employee_panelLayout = new javax.swing.GroupLayout(search_employee_panel);
+        search_employee_panel.setLayout(search_employee_panelLayout);
+        search_employee_panelLayout.setHorizontalGroup(
+            search_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 818, Short.MAX_VALUE)
+        );
+        search_employee_panelLayout.setVerticalGroup(
+            search_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+
+        system_setup_internal_panel.add(search_employee_panel, "card2");
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 818, Short.MAX_VALUE)
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+
+        system_setup_internal_panel.add(jPanel12, "card2");
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 818, Short.MAX_VALUE)
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+
+        system_setup_internal_panel.add(jPanel13, "card2");
+
         javax.swing.GroupLayout system_setup_panelLayout = new javax.swing.GroupLayout(system_setup_panel);
         system_setup_panel.setLayout(system_setup_panelLayout);
         system_setup_panelLayout.setHorizontalGroup(
             system_setup_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 687, Short.MAX_VALUE)
+            .addGroup(system_setup_panelLayout.createSequentialGroup()
+                .addGap(184, 184, 184)
+                .addComponent(Add_New_Employee_btn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Update_Employee_Btn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Delete_Employee_Btn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Search_Employee_Btn)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(system_setup_panelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(system_setup_internal_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         system_setup_panelLayout.setVerticalGroup(
             system_setup_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 402, Short.MAX_VALUE)
+            .addGroup(system_setup_panelLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(system_setup_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Add_New_Employee_btn)
+                    .addComponent(Update_Employee_Btn)
+                    .addComponent(Delete_Employee_Btn)
+                    .addComponent(Search_Employee_Btn))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(system_setup_internal_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         functions_panel.add(system_setup_panel, "card2");
@@ -413,6 +556,22 @@ public class Main_Frame extends javax.swing.JFrame {
         bf.Buttoncall(functions_panel, system_setup_panel);
     }//GEN-LAST:event_System_Setup_BtnActionPerformed
 
+    private void Add_New_Employee_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Add_New_Employee_btnActionPerformed
+        bf.Buttoncall(system_setup_internal_panel, add_new_employee_panel);
+    }//GEN-LAST:event_Add_New_Employee_btnActionPerformed
+
+    private void Update_Employee_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Update_Employee_BtnActionPerformed
+       bf.Buttoncall(system_setup_internal_panel, update_employee_panel); 
+    }//GEN-LAST:event_Update_Employee_BtnActionPerformed
+
+    private void Delete_Employee_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Delete_Employee_BtnActionPerformed
+        bf.Buttoncall(system_setup_internal_panel, delete_employee_panel); 
+    }//GEN-LAST:event_Delete_Employee_BtnActionPerformed
+
+    private void Search_Employee_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Search_Employee_BtnActionPerformed
+       bf.Buttoncall(system_setup_internal_panel, search_employee_panel); 
+    }//GEN-LAST:event_Search_Employee_BtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -449,13 +608,19 @@ public class Main_Frame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Add_New_Employee_btn;
     private javax.swing.JButton Customers_Btn;
+    private javax.swing.JButton Delete_Employee_Btn;
     private javax.swing.JButton Logout_Btn;
     private javax.swing.JButton Reports_Btn;
+    private javax.swing.JButton Search_Employee_Btn;
     private javax.swing.JButton System_Setup_Btn;
+    private javax.swing.JButton Update_Employee_Btn;
     private javax.swing.JButton Welcome_Admin_Btn;
+    private javax.swing.JPanel add_new_employee_panel;
     private javax.swing.JPanel button_panel;
     private javax.swing.JPanel customers_panel;
+    private javax.swing.JPanel delete_employee_panel;
     private javax.swing.JPanel functions_panel;
     private javax.swing.JPanel header_panel;
     private javax.swing.JButton jButton1;
@@ -466,6 +631,8 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
@@ -475,7 +642,10 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JPanel main_panel;
     private javax.swing.JPanel reports_panel;
+    private javax.swing.JPanel search_employee_panel;
+    private javax.swing.JPanel system_setup_internal_panel;
     private javax.swing.JPanel system_setup_panel;
+    private javax.swing.JPanel update_employee_panel;
     private javax.swing.JPanel welcome_admin_panel;
     // End of variables declaration//GEN-END:variables
 }
