@@ -1,5 +1,16 @@
 
+import java.awt.Component;
+import java.awt.Container;
 import java.awt.Toolkit;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -18,7 +29,7 @@ public class Main_Frame extends javax.swing.JFrame {
      */
     public Main_Frame() {
         initComponents();
-        //Setting screen size full
+        //Setting screen size fullsys
         Toolkit tk = Toolkit.getDefaultToolkit();
         int xsize = (int) tk.getScreenSize().getWidth();
         int ysize = (int) tk.getScreenSize().getHeight();
@@ -34,6 +45,10 @@ public class Main_Frame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        add_employeeTypeGroup = new javax.swing.ButtonGroup();
+        update_employeeTypeGroup = new javax.swing.ButtonGroup();
+        delete_employeeTypeGroup = new javax.swing.ButtonGroup();
+        search_employeeTypeGroup = new javax.swing.ButtonGroup();
         main_panel = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         header_panel = new javax.swing.JPanel();
@@ -62,9 +77,99 @@ public class Main_Frame extends javax.swing.JFrame {
         Search_Employee_Btn = new javax.swing.JButton();
         system_setup_internal_panel = new javax.swing.JPanel();
         add_new_employee_panel = new javax.swing.JPanel();
+        add_employeeNameLabel = new javax.swing.JLabel();
+        add_employeeIdLabel = new javax.swing.JLabel();
+        add_employeeEmailLabel = new javax.swing.JLabel();
+        add_employeePhLabel = new javax.swing.JLabel();
+        add_employeeTypeLabel = new javax.swing.JLabel();
+        add_employeeLoginIdLabel = new javax.swing.JLabel();
+        add_employeePasswordLabel = new javax.swing.JLabel();
+        add_employeeNameField = new javax.swing.JTextField();
+        add_employeeEmailField = new javax.swing.JTextField();
+        add_employeePhField = new javax.swing.JTextField();
+        add_employeeLoginIdField = new javax.swing.JTextField();
+        add_employeeIDField = new javax.swing.JTextField();
+        add_employeePasswordField = new javax.swing.JTextField();
+        add_addEmployee = new javax.swing.JButton();
+        add_cancelEmployee = new javax.swing.JButton();
+        add_clearEmployee = new javax.swing.JButton();
+        add_employeeAddressLabel = new javax.swing.JLabel();
+        add_employeeAddressField = new javax.swing.JTextField();
+        add_type_Standard = new javax.swing.JRadioButton();
+        add_type_Admin = new javax.swing.JRadioButton();
         update_employee_panel = new javax.swing.JPanel();
+        update_dataPanel = new javax.swing.JPanel();
+        update_employeeNameLabel = new javax.swing.JLabel();
+        update_employeeIdLabel = new javax.swing.JLabel();
+        update_employeeEmailLabel = new javax.swing.JLabel();
+        update_employeePhLabel = new javax.swing.JLabel();
+        update_employeeTypeLabel = new javax.swing.JLabel();
+        update_employeeLoginIdLabel = new javax.swing.JLabel();
+        update_employeePasswordLabel = new javax.swing.JLabel();
+        update_employeeNameField = new javax.swing.JTextField();
+        update_employeeEmailField = new javax.swing.JTextField();
+        update_employeePhField = new javax.swing.JTextField();
+        update_employeeLoginIdField = new javax.swing.JTextField();
+        update_employeeIDField = new javax.swing.JTextField();
+        update_employeePasswordField = new javax.swing.JTextField();
+        update_updateEmployee = new javax.swing.JButton();
+        update_cancelEmployee = new javax.swing.JButton();
+        update_clearEmployee = new javax.swing.JButton();
+        update_type_Standard = new javax.swing.JRadioButton();
+        update_type_Admin = new javax.swing.JRadioButton();
+        update_searchPanel = new javax.swing.JPanel();
+        update_searchEmployeeLabel = new javax.swing.JLabel();
+        update_searchButton = new javax.swing.JButton();
+        update_searchField = new javax.swing.JTextField();
+        update_Heading = new javax.swing.JLabel();
         delete_employee_panel = new javax.swing.JPanel();
+        delete_dataPanel = new javax.swing.JPanel();
+        delete_employeeNameLabel = new javax.swing.JLabel();
+        delete_employeeIdLabel = new javax.swing.JLabel();
+        delete_employeeEmailLabel = new javax.swing.JLabel();
+        delete_employeePhLabel = new javax.swing.JLabel();
+        delete_employeeTypeLabel = new javax.swing.JLabel();
+        delete_employeeLoginIdLabel = new javax.swing.JLabel();
+        delete_employeePasswordLabel = new javax.swing.JLabel();
+        delete_employeeNameField = new javax.swing.JTextField();
+        delete_employeeEmailField = new javax.swing.JTextField();
+        delete_employeePhField = new javax.swing.JTextField();
+        delete_employeeLoginIdField = new javax.swing.JTextField();
+        delete_employeeIDField = new javax.swing.JTextField();
+        delete_employeePasswordField = new javax.swing.JTextField();
+        delete_updateEmployee = new javax.swing.JButton();
+        delete_cancelEmployee = new javax.swing.JButton();
+        delete_clearEmployee = new javax.swing.JButton();
+        delete_type_Standard = new javax.swing.JRadioButton();
+        delete_type_Admin = new javax.swing.JRadioButton();
+        delete_searchPanel = new javax.swing.JPanel();
+        delete_searchEmployeeLabel = new javax.swing.JLabel();
+        delete_searchButton = new javax.swing.JButton();
+        delete_searchField = new javax.swing.JTextField();
+        delete_Heading = new javax.swing.JLabel();
         search_employee_panel = new javax.swing.JPanel();
+        search_dataPanel = new javax.swing.JPanel();
+        search_employeeNameLabel = new javax.swing.JLabel();
+        search_employeeIdLabel = new javax.swing.JLabel();
+        search_employeeEmailLabel = new javax.swing.JLabel();
+        search_employeePhLabel = new javax.swing.JLabel();
+        search_employeeTypeLabel = new javax.swing.JLabel();
+        search_employeeLoginIdLabel = new javax.swing.JLabel();
+        search_employeePasswordLabel = new javax.swing.JLabel();
+        search_employeeNameField = new javax.swing.JTextField();
+        search_employeeEmailField = new javax.swing.JTextField();
+        search_employeePhField = new javax.swing.JTextField();
+        search_employeeLoginIdField = new javax.swing.JTextField();
+        search_employeeIDField = new javax.swing.JTextField();
+        search_employeePasswordField = new javax.swing.JTextField();
+        search_cancelEmployee = new javax.swing.JButton();
+        search_type_Standard = new javax.swing.JRadioButton();
+        search_type_Admin = new javax.swing.JRadioButton();
+        search_searchPanel = new javax.swing.JPanel();
+        search_searchEmployeeLabel = new javax.swing.JLabel();
+        search_searchButton = new javax.swing.JButton();
+        search_searchField = new javax.swing.JTextField();
+        search_Heading = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -192,12 +297,10 @@ public class Main_Frame extends javax.swing.JFrame {
         welcome_admin_panelLayout.setHorizontalGroup(
             welcome_admin_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(welcome_admin_panelLayout.createSequentialGroup()
-                .addContainerGap(233, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addContainerGap(234, Short.MAX_VALUE))
-            .addGroup(welcome_admin_panelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
+                .addGroup(welcome_admin_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         welcome_admin_panelLayout.setVerticalGroup(
@@ -309,54 +412,765 @@ public class Main_Frame extends javax.swing.JFrame {
 
         system_setup_internal_panel.setLayout(new java.awt.CardLayout());
 
+        add_employeeNameLabel.setText("Name");
+
+        add_employeeIdLabel.setText("ID");
+
+        add_employeeEmailLabel.setText("Email");
+
+        add_employeePhLabel.setText("Phone Number");
+
+        add_employeeTypeLabel.setText("Type");
+
+        add_employeeLoginIdLabel.setText("Login ID");
+
+        add_employeePasswordLabel.setText("Password");
+
+        add_employeeEmailField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_employeeEmailFieldActionPerformed(evt);
+            }
+        });
+
+        add_employeePhField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_employeePhFieldActionPerformed(evt);
+            }
+        });
+
+        add_employeeLoginIdField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_employeeLoginIdFieldActionPerformed(evt);
+            }
+        });
+
+        add_employeeIDField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_employeeIDFieldActionPerformed(evt);
+            }
+        });
+
+        add_employeePasswordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_employeePasswordFieldActionPerformed(evt);
+            }
+        });
+
+        add_addEmployee.setText("ADD");
+        add_addEmployee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_addEmployeeActionPerformed(evt);
+            }
+        });
+
+        add_cancelEmployee.setText("Cancel");
+
+        add_clearEmployee.setText("Clear");
+        add_clearEmployee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_clearEmployeeActionPerformed(evt);
+            }
+        });
+
+        add_employeeAddressLabel.setText("Address");
+
+        add_employeeTypeGroup.add(add_type_Standard);
+        add_type_Standard.setText("Standard");
+
+        add_employeeTypeGroup.add(add_type_Admin);
+        add_type_Admin.setText("Admin");
+
         javax.swing.GroupLayout add_new_employee_panelLayout = new javax.swing.GroupLayout(add_new_employee_panel);
         add_new_employee_panel.setLayout(add_new_employee_panelLayout);
         add_new_employee_panelLayout.setHorizontalGroup(
             add_new_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 818, Short.MAX_VALUE)
+            .addGroup(add_new_employee_panelLayout.createSequentialGroup()
+                .addGroup(add_new_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(add_new_employee_panelLayout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addGroup(add_new_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(add_employeeNameLabel)
+                            .addComponent(add_employeePasswordLabel)
+                            .addComponent(add_employeeLoginIdLabel)
+                            .addComponent(add_employeePhLabel)
+                            .addComponent(add_employeeIdLabel)
+                            .addComponent(add_employeeEmailLabel)
+                            .addComponent(add_employeeAddressLabel)
+                            .addComponent(add_employeeTypeLabel))
+                        .addGap(61, 61, 61)
+                        .addGroup(add_new_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(add_new_employee_panelLayout.createSequentialGroup()
+                                .addComponent(add_type_Standard)
+                                .addGap(36, 36, 36)
+                                .addComponent(add_type_Admin))
+                            .addGroup(add_new_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(add_employeeEmailField, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                                .addComponent(add_employeeIDField, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                                .addComponent(add_employeePhField, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                                .addComponent(add_employeeLoginIdField, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                                .addComponent(add_employeeNameField)
+                                .addComponent(add_employeePasswordField, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                                .addComponent(add_employeeAddressField))))
+                    .addGroup(add_new_employee_panelLayout.createSequentialGroup()
+                        .addGap(253, 253, 253)
+                        .addComponent(add_clearEmployee)
+                        .addGap(29, 29, 29)
+                        .addComponent(add_addEmployee)
+                        .addGap(66, 66, 66)
+                        .addComponent(add_cancelEmployee)))
+                .addContainerGap(295, Short.MAX_VALUE))
         );
         add_new_employee_panelLayout.setVerticalGroup(
             add_new_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(add_new_employee_panelLayout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(add_new_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(add_employeeNameLabel)
+                    .addComponent(add_employeeNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(add_new_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(add_employeeIdLabel)
+                    .addComponent(add_employeeIDField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(add_new_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(add_employeeEmailLabel)
+                    .addComponent(add_employeeEmailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(add_new_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(add_employeePhLabel)
+                    .addComponent(add_employeePhField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(add_new_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(add_employeeTypeLabel)
+                    .addComponent(add_type_Standard)
+                    .addComponent(add_type_Admin))
+                .addGap(19, 19, 19)
+                .addGroup(add_new_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(add_employeeLoginIdLabel)
+                    .addComponent(add_employeeLoginIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(add_new_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(add_employeePasswordLabel)
+                    .addComponent(add_employeePasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(add_new_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(add_employeeAddressLabel)
+                    .addComponent(add_employeeAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addGroup(add_new_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(add_addEmployee)
+                    .addComponent(add_cancelEmployee)
+                    .addComponent(add_clearEmployee))
+                .addGap(49, 49, 49))
         );
 
         system_setup_internal_panel.add(add_new_employee_panel, "card2");
+
+        update_employeeNameLabel.setText("Name");
+
+        update_employeeIdLabel.setText("ID");
+
+        update_employeeEmailLabel.setText("Email");
+
+        update_employeePhLabel.setText("Phone Number");
+
+        update_employeeTypeLabel.setText("Type");
+
+        update_employeeLoginIdLabel.setText("Login ID");
+
+        update_employeePasswordLabel.setText("Password");
+
+        update_employeeEmailField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                update_employeeEmailFieldActionPerformed(evt);
+            }
+        });
+
+        update_employeePhField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                update_employeePhFieldActionPerformed(evt);
+            }
+        });
+
+        update_employeeLoginIdField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                update_employeeLoginIdFieldActionPerformed(evt);
+            }
+        });
+
+        update_employeeIDField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                update_employeeIDFieldActionPerformed(evt);
+            }
+        });
+
+        update_employeePasswordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                update_employeePasswordFieldActionPerformed(evt);
+            }
+        });
+
+        update_updateEmployee.setText("Update");
+
+        update_cancelEmployee.setText("Cancel");
+
+        update_clearEmployee.setText("Clear");
+        update_clearEmployee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                update_clearEmployeeActionPerformed(evt);
+            }
+        });
+
+        update_employeeTypeGroup.add(update_type_Standard);
+        update_type_Standard.setText("Standard");
+
+        update_employeeTypeGroup.add(update_type_Admin);
+        update_type_Admin.setText("Admin");
+
+        javax.swing.GroupLayout update_dataPanelLayout = new javax.swing.GroupLayout(update_dataPanel);
+        update_dataPanel.setLayout(update_dataPanelLayout);
+        update_dataPanelLayout.setHorizontalGroup(
+            update_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(update_dataPanelLayout.createSequentialGroup()
+                .addGap(138, 138, 138)
+                .addComponent(update_type_Standard)
+                .addGap(36, 36, 36)
+                .addComponent(update_type_Admin)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(update_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(update_dataPanelLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(update_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(update_dataPanelLayout.createSequentialGroup()
+                            .addGroup(update_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(update_employeeNameLabel)
+                                .addComponent(update_employeePasswordLabel)
+                                .addComponent(update_employeeLoginIdLabel)
+                                .addComponent(update_employeeTypeLabel)
+                                .addComponent(update_employeePhLabel)
+                                .addComponent(update_employeeIdLabel)
+                                .addComponent(update_employeeEmailLabel))
+                            .addGap(61, 61, 61)
+                            .addGroup(update_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(update_employeePhField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(update_employeeLoginIdField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(update_employeePasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(update_employeeEmailField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(update_employeeIDField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(update_employeeNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(update_dataPanelLayout.createSequentialGroup()
+                            .addGap(199, 199, 199)
+                            .addComponent(update_clearEmployee)
+                            .addGap(29, 29, 29)
+                            .addComponent(update_updateEmployee)
+                            .addGap(66, 66, 66)
+                            .addComponent(update_cancelEmployee)))
+                    .addContainerGap(294, Short.MAX_VALUE)))
+        );
+        update_dataPanelLayout.setVerticalGroup(
+            update_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, update_dataPanelLayout.createSequentialGroup()
+                .addContainerGap(172, Short.MAX_VALUE)
+                .addGroup(update_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(update_type_Standard)
+                    .addComponent(update_type_Admin))
+                .addGap(114, 114, 114))
+            .addGroup(update_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(update_dataPanelLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(update_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(update_employeeNameLabel)
+                        .addComponent(update_employeeNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(26, 26, 26)
+                    .addGroup(update_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(update_employeeIdLabel)
+                        .addComponent(update_employeeIDField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(20, 20, 20)
+                    .addGroup(update_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(update_employeeEmailLabel)
+                        .addComponent(update_employeeEmailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addGroup(update_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(update_employeePhLabel)
+                        .addComponent(update_employeePhField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addComponent(update_employeeTypeLabel)
+                    .addGap(24, 24, 24)
+                    .addGroup(update_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(update_employeeLoginIdLabel)
+                        .addComponent(update_employeeLoginIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addGroup(update_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(update_employeePasswordLabel)
+                        .addComponent(update_employeePasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(update_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(update_updateEmployee)
+                        .addComponent(update_cancelEmployee)
+                        .addComponent(update_clearEmployee))
+                    .addContainerGap()))
+        );
+
+        update_searchEmployeeLabel.setText("Search Employee");
+
+        update_searchButton.setText("Search");
+        update_searchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                update_searchButtonActionPerformed(evt);
+            }
+        });
+
+        update_searchField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                update_searchFieldActionPerformed(evt);
+            }
+        });
+
+        update_Heading.setText("Update Employee");
+
+        javax.swing.GroupLayout update_searchPanelLayout = new javax.swing.GroupLayout(update_searchPanel);
+        update_searchPanel.setLayout(update_searchPanelLayout);
+        update_searchPanelLayout.setHorizontalGroup(
+            update_searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, update_searchPanelLayout.createSequentialGroup()
+                .addContainerGap(173, Short.MAX_VALUE)
+                .addComponent(update_searchEmployeeLabel)
+                .addGap(60, 60, 60)
+                .addGroup(update_searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(update_searchPanelLayout.createSequentialGroup()
+                        .addComponent(update_searchField, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
+                        .addComponent(update_searchButton))
+                    .addComponent(update_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(167, 167, 167))
+        );
+        update_searchPanelLayout.setVerticalGroup(
+            update_searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, update_searchPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(update_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(update_searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(update_searchEmployeeLabel)
+                    .addComponent(update_searchButton)
+                    .addComponent(update_searchField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
+        );
 
         javax.swing.GroupLayout update_employee_panelLayout = new javax.swing.GroupLayout(update_employee_panel);
         update_employee_panel.setLayout(update_employee_panelLayout);
         update_employee_panelLayout.setHorizontalGroup(
             update_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 818, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, update_employee_panelLayout.createSequentialGroup()
+                .addContainerGap(21, Short.MAX_VALUE)
+                .addGroup(update_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(update_searchPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(update_dataPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         update_employee_panelLayout.setVerticalGroup(
             update_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(update_employee_panelLayout.createSequentialGroup()
+                .addComponent(update_searchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(update_dataPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         system_setup_internal_panel.add(update_employee_panel, "card2");
+
+        delete_employeeNameLabel.setText("Name");
+
+        delete_employeeIdLabel.setText("ID");
+
+        delete_employeeEmailLabel.setText("Email");
+
+        delete_employeePhLabel.setText("Phone Number");
+
+        delete_employeeTypeLabel.setText("Type");
+
+        delete_employeeLoginIdLabel.setText("Login ID");
+
+        delete_employeePasswordLabel.setText("Password");
+
+        delete_employeeEmailField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_employeeEmailFieldActionPerformed(evt);
+            }
+        });
+
+        delete_employeePhField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_employeePhFieldActionPerformed(evt);
+            }
+        });
+
+        delete_employeeLoginIdField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_employeeLoginIdFieldActionPerformed(evt);
+            }
+        });
+
+        delete_employeeIDField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_employeeIDFieldActionPerformed(evt);
+            }
+        });
+
+        delete_employeePasswordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_employeePasswordFieldActionPerformed(evt);
+            }
+        });
+
+        delete_updateEmployee.setText("Update");
+
+        delete_cancelEmployee.setText("Cancel");
+
+        delete_clearEmployee.setText("Clear");
+        delete_clearEmployee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_clearEmployeeActionPerformed(evt);
+            }
+        });
+
+        delete_employeeTypeGroup.add(delete_type_Standard);
+        delete_type_Standard.setText("Standard");
+
+        delete_employeeTypeGroup.add(delete_type_Admin);
+        delete_type_Admin.setText("Admin");
+
+        javax.swing.GroupLayout delete_dataPanelLayout = new javax.swing.GroupLayout(delete_dataPanel);
+        delete_dataPanel.setLayout(delete_dataPanelLayout);
+        delete_dataPanelLayout.setHorizontalGroup(
+            delete_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(delete_dataPanelLayout.createSequentialGroup()
+                .addGap(143, 143, 143)
+                .addComponent(delete_type_Standard)
+                .addGap(36, 36, 36)
+                .addComponent(delete_type_Admin)
+                .addContainerGap(495, Short.MAX_VALUE))
+            .addGroup(delete_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(delete_dataPanelLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(delete_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(delete_dataPanelLayout.createSequentialGroup()
+                            .addGroup(delete_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(delete_employeeNameLabel)
+                                .addComponent(delete_employeePasswordLabel)
+                                .addComponent(delete_employeeLoginIdLabel)
+                                .addComponent(delete_employeeTypeLabel)
+                                .addComponent(delete_employeePhLabel)
+                                .addComponent(delete_employeeIdLabel)
+                                .addComponent(delete_employeeEmailLabel))
+                            .addGap(61, 61, 61)
+                            .addGroup(delete_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(delete_employeeEmailField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(delete_employeePhField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(delete_employeeLoginIdField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(delete_employeePasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(delete_employeeIDField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(delete_employeeNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(delete_dataPanelLayout.createSequentialGroup()
+                            .addGap(199, 199, 199)
+                            .addComponent(delete_clearEmployee)
+                            .addGap(29, 29, 29)
+                            .addComponent(delete_updateEmployee)
+                            .addGap(66, 66, 66)
+                            .addComponent(delete_cancelEmployee)))
+                    .addContainerGap(305, Short.MAX_VALUE)))
+        );
+        delete_dataPanelLayout.setVerticalGroup(
+            delete_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, delete_dataPanelLayout.createSequentialGroup()
+                .addContainerGap(167, Short.MAX_VALUE)
+                .addGroup(delete_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(delete_type_Standard)
+                    .addComponent(delete_type_Admin))
+                .addGap(128, 128, 128))
+            .addGroup(delete_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(delete_dataPanelLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(delete_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(delete_employeeNameLabel)
+                        .addComponent(delete_employeeNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(26, 26, 26)
+                    .addGroup(delete_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(delete_employeeIdLabel)
+                        .addComponent(delete_employeeIDField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(14, 14, 14)
+                    .addGroup(delete_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(delete_employeeEmailLabel)
+                        .addComponent(delete_employeeEmailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addGroup(delete_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(delete_employeePhLabel)
+                        .addComponent(delete_employeePhField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addComponent(delete_employeeTypeLabel)
+                    .addGap(24, 24, 24)
+                    .addGroup(delete_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(delete_employeeLoginIdLabel)
+                        .addComponent(delete_employeeLoginIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addGroup(delete_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(delete_employeePasswordLabel)
+                        .addComponent(delete_employeePasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                    .addGroup(delete_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(delete_updateEmployee)
+                        .addComponent(delete_cancelEmployee)
+                        .addComponent(delete_clearEmployee))
+                    .addContainerGap()))
+        );
+
+        delete_searchEmployeeLabel.setText("Search Employee");
+
+        delete_searchButton.setText("Search");
+
+        delete_Heading.setText("Delete Employee");
+
+        javax.swing.GroupLayout delete_searchPanelLayout = new javax.swing.GroupLayout(delete_searchPanel);
+        delete_searchPanel.setLayout(delete_searchPanelLayout);
+        delete_searchPanelLayout.setHorizontalGroup(
+            delete_searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(delete_searchPanelLayout.createSequentialGroup()
+                .addGroup(delete_searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(delete_searchPanelLayout.createSequentialGroup()
+                        .addGap(188, 188, 188)
+                        .addComponent(delete_searchEmployeeLabel)
+                        .addGap(58, 58, 58)
+                        .addComponent(delete_searchField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37)
+                        .addComponent(delete_searchButton))
+                    .addGroup(delete_searchPanelLayout.createSequentialGroup()
+                        .addGap(319, 319, 319)
+                        .addComponent(delete_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(168, Short.MAX_VALUE))
+        );
+        delete_searchPanelLayout.setVerticalGroup(
+            delete_searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, delete_searchPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(delete_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                .addGap(29, 29, 29)
+                .addGroup(delete_searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(delete_searchButton)
+                    .addComponent(delete_searchField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(delete_searchEmployeeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout delete_employee_panelLayout = new javax.swing.GroupLayout(delete_employee_panel);
         delete_employee_panel.setLayout(delete_employee_panelLayout);
         delete_employee_panelLayout.setHorizontalGroup(
             delete_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 818, Short.MAX_VALUE)
+            .addGroup(delete_employee_panelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(delete_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(delete_dataPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(delete_searchPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         delete_employee_panelLayout.setVerticalGroup(
             delete_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, delete_employee_panelLayout.createSequentialGroup()
+                .addComponent(delete_searchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(delete_dataPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         system_setup_internal_panel.add(delete_employee_panel, "card2");
+
+        search_employeeNameLabel.setText("Name");
+
+        search_employeeIdLabel.setText("ID");
+
+        search_employeeEmailLabel.setText("Email");
+
+        search_employeePhLabel.setText("Phone Number");
+
+        search_employeeTypeLabel.setText("Type");
+
+        search_employeeLoginIdLabel.setText("Login ID");
+
+        search_employeePasswordLabel.setText("Password");
+
+        search_employeeEmailField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_employeeEmailFieldActionPerformed(evt);
+            }
+        });
+
+        search_employeePhField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_employeePhFieldActionPerformed(evt);
+            }
+        });
+
+        search_employeeLoginIdField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_employeeLoginIdFieldActionPerformed(evt);
+            }
+        });
+
+        search_employeeIDField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_employeeIDFieldActionPerformed(evt);
+            }
+        });
+
+        search_employeePasswordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_employeePasswordFieldActionPerformed(evt);
+            }
+        });
+
+        search_cancelEmployee.setText("Back");
+
+        search_employeeTypeGroup.add(search_type_Standard);
+        search_type_Standard.setText("Standard");
+
+        search_employeeTypeGroup.add(search_type_Admin);
+        search_type_Admin.setText("Admin");
+
+        javax.swing.GroupLayout search_dataPanelLayout = new javax.swing.GroupLayout(search_dataPanel);
+        search_dataPanel.setLayout(search_dataPanelLayout);
+        search_dataPanelLayout.setHorizontalGroup(
+            search_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, search_dataPanelLayout.createSequentialGroup()
+                .addContainerGap(435, Short.MAX_VALUE)
+                .addComponent(search_cancelEmployee)
+                .addGap(308, 308, 308))
+            .addGroup(search_dataPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(search_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(search_dataPanelLayout.createSequentialGroup()
+                        .addComponent(search_employeeLoginIdLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(search_employeeLoginIdField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(search_dataPanelLayout.createSequentialGroup()
+                        .addComponent(search_employeePasswordLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(search_employeePasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(search_dataPanelLayout.createSequentialGroup()
+                        .addComponent(search_employeeTypeLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(search_type_Standard)
+                        .addGap(36, 36, 36)
+                        .addComponent(search_type_Admin))
+                    .addGroup(search_dataPanelLayout.createSequentialGroup()
+                        .addComponent(search_employeePhLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(search_employeePhField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(search_dataPanelLayout.createSequentialGroup()
+                        .addComponent(search_employeeEmailLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(search_employeeEmailField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(search_dataPanelLayout.createSequentialGroup()
+                        .addComponent(search_employeeIdLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(search_employeeIDField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(search_dataPanelLayout.createSequentialGroup()
+                        .addComponent(search_employeeNameLabel)
+                        .addGap(105, 105, 105)
+                        .addComponent(search_employeeNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        search_dataPanelLayout.setVerticalGroup(
+            search_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, search_dataPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(search_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(search_employeeNameLabel)
+                    .addComponent(search_employeeNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(search_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(search_employeeIdLabel)
+                    .addComponent(search_employeeIDField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(search_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(search_employeeEmailLabel)
+                    .addComponent(search_employeeEmailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addGroup(search_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(search_employeePhLabel)
+                    .addComponent(search_employeePhField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(search_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(search_employeeTypeLabel)
+                    .addGroup(search_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(search_type_Standard)
+                        .addComponent(search_type_Admin)))
+                .addGap(18, 18, 18)
+                .addGroup(search_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(search_employeeLoginIdLabel)
+                    .addComponent(search_employeeLoginIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addGroup(search_dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(search_employeePasswordLabel)
+                    .addComponent(search_employeePasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addComponent(search_cancelEmployee)
+                .addGap(21, 21, 21))
+        );
+
+        search_searchEmployeeLabel.setText("Search Employee");
+
+        search_searchButton.setText("Search");
+
+        search_Heading.setText("Search Employee");
+
+        javax.swing.GroupLayout search_searchPanelLayout = new javax.swing.GroupLayout(search_searchPanel);
+        search_searchPanel.setLayout(search_searchPanelLayout);
+        search_searchPanelLayout.setHorizontalGroup(
+            search_searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(search_searchPanelLayout.createSequentialGroup()
+                .addGroup(search_searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(search_searchPanelLayout.createSequentialGroup()
+                        .addGap(188, 188, 188)
+                        .addComponent(search_searchEmployeeLabel)
+                        .addGap(58, 58, 58)
+                        .addComponent(search_searchField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37)
+                        .addComponent(search_searchButton))
+                    .addGroup(search_searchPanelLayout.createSequentialGroup()
+                        .addGap(319, 319, 319)
+                        .addComponent(search_Heading, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(168, Short.MAX_VALUE))
+        );
+        search_searchPanelLayout.setVerticalGroup(
+            search_searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, search_searchPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(search_Heading, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                .addGap(29, 29, 29)
+                .addGroup(search_searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(search_searchButton)
+                    .addComponent(search_searchField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(search_searchEmployeeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout search_employee_panelLayout = new javax.swing.GroupLayout(search_employee_panel);
         search_employee_panel.setLayout(search_employee_panelLayout);
         search_employee_panelLayout.setHorizontalGroup(
             search_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 818, Short.MAX_VALUE)
+            .addGroup(search_employee_panelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(search_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(search_searchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(search_dataPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         search_employee_panelLayout.setVerticalGroup(
             search_employee_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, search_employee_panelLayout.createSequentialGroup()
+                .addComponent(search_searchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(search_dataPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         system_setup_internal_panel.add(search_employee_panel, "card2");
@@ -572,6 +1386,201 @@ public class Main_Frame extends javax.swing.JFrame {
        bf.Buttoncall(system_setup_internal_panel, search_employee_panel); 
     }//GEN-LAST:event_Search_Employee_BtnActionPerformed
 
+    private void add_employeeEmailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_employeeEmailFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_employeeEmailFieldActionPerformed
+
+    private void add_employeePhFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_employeePhFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_employeePhFieldActionPerformed
+
+    private void add_employeeLoginIdFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_employeeLoginIdFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_employeeLoginIdFieldActionPerformed
+
+    private void add_employeeIDFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_employeeIDFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_employeeIDFieldActionPerformed
+
+    private void add_employeePasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_employeePasswordFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_employeePasswordFieldActionPerformed
+
+    private void add_clearEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_clearEmployeeActionPerformed
+        // TODO add your handling code here:
+          clearTextFields(add_new_employee_panel);
+    }//GEN-LAST:event_add_clearEmployeeActionPerformed
+
+    private void update_employeeEmailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_employeeEmailFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_update_employeeEmailFieldActionPerformed
+
+    private void update_employeePhFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_employeePhFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_update_employeePhFieldActionPerformed
+
+    private void update_employeeLoginIdFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_employeeLoginIdFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_update_employeeLoginIdFieldActionPerformed
+
+    private void update_employeeIDFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_employeeIDFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_update_employeeIDFieldActionPerformed
+
+    private void update_employeePasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_employeePasswordFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_update_employeePasswordFieldActionPerformed
+
+    private void update_clearEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_clearEmployeeActionPerformed
+        // TODO add your handling code here:
+        clearTextFields(update_employee_panel);
+    }//GEN-LAST:event_update_clearEmployeeActionPerformed
+
+    private void delete_employeeEmailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_employeeEmailFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_delete_employeeEmailFieldActionPerformed
+
+    private void delete_employeePhFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_employeePhFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_delete_employeePhFieldActionPerformed
+
+    private void delete_employeeLoginIdFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_employeeLoginIdFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_delete_employeeLoginIdFieldActionPerformed
+
+    private void delete_employeeIDFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_employeeIDFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_delete_employeeIDFieldActionPerformed
+
+    private void delete_employeePasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_employeePasswordFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_delete_employeePasswordFieldActionPerformed
+
+    private void delete_clearEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_clearEmployeeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_delete_clearEmployeeActionPerformed
+
+    private void update_searchFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_searchFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_update_searchFieldActionPerformed
+
+    private void search_employeeEmailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_employeeEmailFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_search_employeeEmailFieldActionPerformed
+
+    private void search_employeePhFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_employeePhFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_search_employeePhFieldActionPerformed
+
+    private void search_employeeLoginIdFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_employeeLoginIdFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_search_employeeLoginIdFieldActionPerformed
+
+    private void search_employeeIDFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_employeeIDFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_search_employeeIDFieldActionPerformed
+
+    private void search_employeePasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_employeePasswordFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_search_employeePasswordFieldActionPerformed
+
+    private void add_addEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_addEmployeeActionPerformed
+        // TODO add your handling code here:
+        String name = add_employeeNameField.getText();
+        String id = add_employeeIDField.getText();
+        String email = add_employeeEmailField.getText();
+        String phone = add_employeePhField.getText();
+        int type = 0;
+        try {
+            if (add_type_Standard.isSelected()) {
+                type = 0;
+            } else if (add_type_Admin.isSelected()) {
+                type = 1;
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Please Choose one of (Male Or Female) ");
+        }
+        String loginId = add_employeeLoginIdField.getText();
+        String password = add_employeePasswordField.getText();
+        String address = add_employeeAddressField.getText();
+        
+        Connection connection = null;
+        try {
+            connection = DB_Controller.getConnection();
+            Statement statement = connection.createStatement();
+            String query = " insert into employee (employeeName, employeeEmail, employeePhone, employeeAddress, employeeType,employeeLoginId,employeePassword)"
+        + " values (?, ?, ?, ?, ?,?,?)";
+
+            // create the mysql insert preparedstatement
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
+            preparedStmt.setString (1, name);
+            preparedStmt.setString (2, email);
+            preparedStmt.setString   (3, phone);
+            preparedStmt.setString(4, address);
+            preparedStmt.setInt    (5, type);
+            preparedStmt.setString    (6, loginId);
+            preparedStmt.setString    (7, password);
+
+            // execute the preparedstatement
+            preparedStmt.execute();
+            connection.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Main_Frame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Statement statement = null;
+        try {
+            statement = connection.createStatement();
+            //To get Last Added Key.
+            /*
+//            PreparedStatement pstmt = connection.prepareStatement("INSERT INTO address(house_no, AREA, city, street_no, province) VALUES("+s_houseno+",'"+s_area+"', '"+s_city+"', "+s_streetno+", '"+s_province+"')", Statement.RETURN_GENERATED_KEYS);  
+//            pstmt.executeUpdate();  
+//            ResultSet keys = pstmt.getGeneratedKeys();    
+//            keys.next();  
+//            int last_key = keys.getInt(1);*/
+//            statement.executeUpdate("INSERT INTO phonenumber (CountryCode, mobileNumber) VALUES ('" + s_mobnoCode + "' , '" + s_mobno + "')");
+//            ResultSet rs = statement.executeQuery("SELECT max(phone_id) FROM phonenumber");
+//            rs.next();
+//            int phoneID = rs.getInt(1);
+//
+//            statement.executeUpdate("INSERT INTO address(house_no, AREA, city, street_no, province) VALUES(" + s_houseno + ",'" + s_area + "', '" + s_city + "', " + s_streetno + ", '" + s_province + "')");
+//            rs = statement.executeQuery("SELECT max(add_id) FROM address");
+//            rs.next();
+//            int last_key = rs.getInt(1);
+
+            //Is id is not set yet....
+////            statement.executeUpdate("insert into student(std_name, fathername, gender,dateOfBirth,cnic_no,address_id,dateOfAdmission, phone_id,religion,isStd) "
+////                    + "values('" + sname + "','" + f_name + "','" + gender + "',STR_TO_DATE('" + dob + "','%d,%m,%Y')," + s_cnic + "," + last_key + ",SysDate(),'" + phoneID + "','" + s_religion + "',1)");
+            JOptionPane.showMessageDialog(this, "Employee Successfully Registered.");
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                if (statement != null) {
+                    statement.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException exp) {
+                exp.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_add_addEmployeeActionPerformed
+
+    private void update_searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_searchButtonActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_update_searchButtonActionPerformed
+    public void clearTextFields(Container container) {
+        for (Component c : container.getComponents()) {
+            if (c instanceof JTextField) {
+                JTextField f = (JTextField) c;
+                f.setText("");
+            } else if (c instanceof Container) {
+                clearTextFields((Container) c);
+            }
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -617,10 +1626,56 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JButton System_Setup_Btn;
     private javax.swing.JButton Update_Employee_Btn;
     private javax.swing.JButton Welcome_Admin_Btn;
+    private javax.swing.JButton add_addEmployee;
+    private javax.swing.JButton add_cancelEmployee;
+    private javax.swing.JButton add_clearEmployee;
+    private javax.swing.JTextField add_employeeAddressField;
+    private javax.swing.JLabel add_employeeAddressLabel;
+    private javax.swing.JTextField add_employeeEmailField;
+    private javax.swing.JLabel add_employeeEmailLabel;
+    private javax.swing.JTextField add_employeeIDField;
+    private javax.swing.JLabel add_employeeIdLabel;
+    private javax.swing.JTextField add_employeeLoginIdField;
+    private javax.swing.JLabel add_employeeLoginIdLabel;
+    private javax.swing.JTextField add_employeeNameField;
+    private javax.swing.JLabel add_employeeNameLabel;
+    private javax.swing.JTextField add_employeePasswordField;
+    private javax.swing.JLabel add_employeePasswordLabel;
+    private javax.swing.JTextField add_employeePhField;
+    private javax.swing.JLabel add_employeePhLabel;
+    private javax.swing.ButtonGroup add_employeeTypeGroup;
+    private javax.swing.JLabel add_employeeTypeLabel;
     private javax.swing.JPanel add_new_employee_panel;
+    private javax.swing.JRadioButton add_type_Admin;
+    private javax.swing.JRadioButton add_type_Standard;
     private javax.swing.JPanel button_panel;
     private javax.swing.JPanel customers_panel;
+    private javax.swing.JLabel delete_Heading;
+    private javax.swing.JButton delete_cancelEmployee;
+    private javax.swing.JButton delete_clearEmployee;
+    private javax.swing.JPanel delete_dataPanel;
+    private javax.swing.JTextField delete_employeeEmailField;
+    private javax.swing.JLabel delete_employeeEmailLabel;
+    private javax.swing.JTextField delete_employeeIDField;
+    private javax.swing.JLabel delete_employeeIdLabel;
+    private javax.swing.JTextField delete_employeeLoginIdField;
+    private javax.swing.JLabel delete_employeeLoginIdLabel;
+    private javax.swing.JTextField delete_employeeNameField;
+    private javax.swing.JLabel delete_employeeNameLabel;
+    private javax.swing.JTextField delete_employeePasswordField;
+    private javax.swing.JLabel delete_employeePasswordLabel;
+    private javax.swing.JTextField delete_employeePhField;
+    private javax.swing.JLabel delete_employeePhLabel;
+    private javax.swing.ButtonGroup delete_employeeTypeGroup;
+    private javax.swing.JLabel delete_employeeTypeLabel;
     private javax.swing.JPanel delete_employee_panel;
+    private javax.swing.JButton delete_searchButton;
+    private javax.swing.JLabel delete_searchEmployeeLabel;
+    private javax.swing.JTextField delete_searchField;
+    private javax.swing.JPanel delete_searchPanel;
+    private javax.swing.JRadioButton delete_type_Admin;
+    private javax.swing.JRadioButton delete_type_Standard;
+    private javax.swing.JButton delete_updateEmployee;
     private javax.swing.JPanel functions_panel;
     private javax.swing.JPanel header_panel;
     private javax.swing.JButton jButton1;
@@ -642,10 +1697,58 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JPanel main_panel;
     private javax.swing.JPanel reports_panel;
+    private javax.swing.JLabel search_Heading;
+    private javax.swing.JButton search_cancelEmployee;
+    private javax.swing.JPanel search_dataPanel;
+    private javax.swing.JTextField search_employeeEmailField;
+    private javax.swing.JLabel search_employeeEmailLabel;
+    private javax.swing.JTextField search_employeeIDField;
+    private javax.swing.JLabel search_employeeIdLabel;
+    private javax.swing.JTextField search_employeeLoginIdField;
+    private javax.swing.JLabel search_employeeLoginIdLabel;
+    private javax.swing.JTextField search_employeeNameField;
+    private javax.swing.JLabel search_employeeNameLabel;
+    private javax.swing.JTextField search_employeePasswordField;
+    private javax.swing.JLabel search_employeePasswordLabel;
+    private javax.swing.JTextField search_employeePhField;
+    private javax.swing.JLabel search_employeePhLabel;
+    private javax.swing.ButtonGroup search_employeeTypeGroup;
+    private javax.swing.JLabel search_employeeTypeLabel;
     private javax.swing.JPanel search_employee_panel;
+    private javax.swing.JButton search_searchButton;
+    private javax.swing.JLabel search_searchEmployeeLabel;
+    private javax.swing.JTextField search_searchField;
+    private javax.swing.JPanel search_searchPanel;
+    private javax.swing.JRadioButton search_type_Admin;
+    private javax.swing.JRadioButton search_type_Standard;
     private javax.swing.JPanel system_setup_internal_panel;
     private javax.swing.JPanel system_setup_panel;
+    private javax.swing.JLabel update_Heading;
+    private javax.swing.JButton update_cancelEmployee;
+    private javax.swing.JButton update_clearEmployee;
+    private javax.swing.JPanel update_dataPanel;
+    private javax.swing.JTextField update_employeeEmailField;
+    private javax.swing.JLabel update_employeeEmailLabel;
+    private javax.swing.JTextField update_employeeIDField;
+    private javax.swing.JLabel update_employeeIdLabel;
+    private javax.swing.JTextField update_employeeLoginIdField;
+    private javax.swing.JLabel update_employeeLoginIdLabel;
+    private javax.swing.JTextField update_employeeNameField;
+    private javax.swing.JLabel update_employeeNameLabel;
+    private javax.swing.JTextField update_employeePasswordField;
+    private javax.swing.JLabel update_employeePasswordLabel;
+    private javax.swing.JTextField update_employeePhField;
+    private javax.swing.JLabel update_employeePhLabel;
+    private javax.swing.ButtonGroup update_employeeTypeGroup;
+    private javax.swing.JLabel update_employeeTypeLabel;
     private javax.swing.JPanel update_employee_panel;
+    private javax.swing.JButton update_searchButton;
+    private javax.swing.JLabel update_searchEmployeeLabel;
+    private javax.swing.JTextField update_searchField;
+    private javax.swing.JPanel update_searchPanel;
+    private javax.swing.JRadioButton update_type_Admin;
+    private javax.swing.JRadioButton update_type_Standard;
+    private javax.swing.JButton update_updateEmployee;
     private javax.swing.JPanel welcome_admin_panel;
     // End of variables declaration//GEN-END:variables
 }
