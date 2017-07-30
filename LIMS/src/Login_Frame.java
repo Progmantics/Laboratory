@@ -47,7 +47,7 @@ public class Login_Frame extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Trajan Pro", 3, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 95, 184));
+        jLabel1.setForeground(new java.awt.Color(23, 42, 69));
         jLabel1.setText("Login");
 
         jLabel2.setText("Login Id");
@@ -59,7 +59,7 @@ public class Login_Frame extends javax.swing.JFrame {
 
         jTextField1.setPreferredSize(new java.awt.Dimension(0, 25));
 
-        Login_Btn.setBackground(new java.awt.Color(0, 95, 184));
+        Login_Btn.setBackground(new java.awt.Color(23, 42, 69));
         Login_Btn.setForeground(new java.awt.Color(255, 255, 255));
         Login_Btn.setText("Login");
         Login_Btn.addActionListener(new java.awt.event.ActionListener() {
@@ -68,7 +68,7 @@ public class Login_Frame extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(0, 95, 184));
+        jButton2.setBackground(new java.awt.Color(23, 42, 69));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Close");
 
