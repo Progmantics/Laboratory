@@ -1,7 +1,8 @@
 
+import java.awt.Color;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -23,13 +24,13 @@ public class Basic_Functions {
        main.revalidate(); 
     }
     //Change background when button is selected
-    public void ButtonSelected(JButton btn1, JButton ... Elements)
+    public void ButtonSelected(JLabel btn1, JLabel ... Elements)
     {
 
-       btn1.setBackground(new java.awt.Color(204, 70, 15));
-       for(JButton b:Elements)
+       btn1.setForeground(Color.ORANGE);
+       for(JLabel b:Elements)
        {
-           b.setBackground(new java.awt.Color(23, 42, 69));
+           b.setForeground(Color.WHITE);
        }
     }
     //Empty all the desired JTextFields
@@ -53,4 +54,5 @@ public class Basic_Functions {
 
           });
     }
+    
 }
